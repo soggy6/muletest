@@ -15,16 +15,16 @@ RUN                     ln -s mule-standalone-3.7.0 mule
 # Configure external access:
 
 # Mule remote debugger
-EXPOSE  5000
+#EXPOSE  5000
 
 # Mule JMX port (must match Mule config file)
-EXPOSE  1098
+#EXPOSE  1098
 
 # Default port for HTTP endpoints in AnypointStudio
 EXPOSE  8081    
 
 # Alternate HTTP default endpoint
-EXPOSE  8090
+#EXPOSE  8090
 
 # Environment and execution:
 
