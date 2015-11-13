@@ -1,6 +1,3 @@
-# Choose image
-FROM jws-tomcat7-basic-sti
-
 # Mule installation
 ADD https://repository-master.mulesoft.org/nexus/content/repositories/releases/org/mule/distributions/mule-standalone/3.7.0/mule-standalone-3.7.0.tar.gz
 WORKDIR                 /opt
