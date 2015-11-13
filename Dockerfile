@@ -3,6 +3,7 @@ ADD https://repository-master.mulesoft.org/nexus/content/repositories/releases/o
 WORKDIR                 /opt
 RUN                     tar -xzvf /opt/mule-standalone-3.7.0.tar.gz
 RUN                     ln -s mule-standalone-3.7.0 mule
+
 # Remove things that we don't need in production:
 # RUN                     rm -f mule-standalone-3.7.0.tar.gz
 # RUN                     rm -Rf mule/apps/default*
@@ -25,6 +26,6 @@ EXPOSE  8090
 # Environment and execution:
 
 ENV             MULE_BASE /opt/mule
-WORKDIR         /opt/mule-standalone-3.5.0
+WORKDIR         /opt/mule-standalone-3.7.0
 
 CMD             /opt/mule/bin/mule
