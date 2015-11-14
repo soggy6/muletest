@@ -9,7 +9,7 @@ WORKDIR                 ~/
 #RUN                     tar xzvf ~/mule-standalone-3.7.0.tar.gz
 #RUN                     ln -s mule-standalone-3.7.0 mule
 
-RUN                     ls -al ; pwd ; tar xzvf ~/mule-standalone-3.7.0.tar.gz ; ln -s mule-standalone-3.7.0 mule
+RUN                     ls -al ; pwd ; tar xzvf ~/mule-standalone-3.7.0.tar.gz ; ln -s ~/mule-standalone-3.7.0 ~/mule
 
 # Remove things that we don't need in production:
 # RUN                     rm -f mule-standalone-3.7.0.tar.gz
