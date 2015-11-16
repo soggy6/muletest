@@ -3,13 +3,13 @@ FROM registry.access.redhat.com/jboss-webserver-3/tomcat7-openshift:3.0-135
 
 # Mule installation
 ADD https://repository-master.mulesoft.org/nexus/content/repositories/releases/org/mule/distributions/mule-standalone/3.7.0/mule-standalone-3.7.0.tar.gz ~/
-WORKDIR                 ~/
+WORKDIR                 /opt/local/
 #RUN                     ls -al
 #RUN                     pwd
 #RUN                     tar xzvf ~/mule-standalone-3.7.0.tar.gz
 #RUN                     ln -s mule-standalone-3.7.0 mule
 
-RUN                     ls -al ; pwd ; tar xzvf ~/mule-standalone-3.7.0.tar.gz ; ln -s ~/mule-standalone-3.7.0 ~/mule
+RUN                     ls -al ; pwd ; tar xzvf /opt/local/mule-standalone-3.7.0.tar.gz ; ln -s /opt/local/mule-standalone-3.7.0 ~/mule
 
 # Remove things that we don't need in production:
 # RUN                     rm -f mule-standalone-3.7.0.tar.gz
@@ -32,7 +32,7 @@ RUN                     ls -al ; pwd ; tar xzvf ~/mule-standalone-3.7.0.tar.gz ;
 
 # Environment and execution:
 
-ENV             MULE_BASE ~/mule
-WORKDIR         ~/mule-standalone-3.7.0
+ENV             MULE_BASE /opt/local/mule
+WORKDIR         /opt/local/mule-standalone-3.7.0
 
-CMD             ~/mule/bin/mule
+CMD             /opt/local/mule/bin/mule
