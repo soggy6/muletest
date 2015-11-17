@@ -2,7 +2,8 @@
 FROM          registry.access.redhat.com/openshift3/python-33-rhel7
 
 # Mule installation
-RUN           mkdir -p ~/mulestuff ;\
+RUN           yum -y install java-1.7.0-openjdk-devel ;\
+              mkdir -p ~/mulestuff ;\
               cd ~/mulestuff ;\
               wget http://www.unc.edu/~soggy/mule-standalone-3.7.0.tar.gz  ;\
               tar xzvf ~/mulestuff/mule-standalone-3.7.0.tar.gz ;\
