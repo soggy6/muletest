@@ -2,13 +2,13 @@
 FROM          registry.access.redhat.com/openshift3/php-55-rhel7
 
 # Mule installation
-RUN           mkdir -p /opt/local/
-RUN           cd /opt/local/
+RUN           mkdir -p ~/mulestuff
+RUN           cd ~/mulestuff
 RUN           wget http://repository-master.mulesoft.org/nexus/content/repositories/releases/org/mule/distributions/mule-standalone/3.7.0/mule-standalone-3.7.0.tar.gz 
-RUN           tar xzvf /opt/local/mule-standalone-3.7.0.tar.gz 
-RUN           ln -s /opt/local/mule-standalone-3.7.0 /opt/local/mule 
+RUN           tar xzvf ~/mulestuff/mule-standalone-3.7.0.tar.gz 
+RUN           ln -s ~/mulestuff/mule-standalone-3.7.0 /opt/local/mule 
 
-WORKDIR       /opt/local/
+WORKDIR       ~/mulestuff
 #ADD                     https://repository-master.mulesoft.org/nexus/content/repositories/releases/org/mule/distributions/mule-standalone/3.7.0/mule-standalone-3.7.0.tar.gz /opt/local/
 
 #RUN                     ls -al
@@ -38,6 +38,6 @@ WORKDIR       /opt/local/
 
 # Environment and execution:
 
-ENV           MULE_BASE /opt/local/mule
-WORKDIR       /opt/local/mule
-CMD           /opt/local/mule/bin/mule
+ENV           MULE_BASE ~/mulestuff/mule
+WORKDIR       ~/mulestuff/mule
+CMD           ~/mulestuff/mule/bin/mule
