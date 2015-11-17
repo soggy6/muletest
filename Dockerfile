@@ -2,15 +2,23 @@
 FROM                    registry.access.redhat.com/openshift3/php-55-rhel7
 
 # Mule installation
+RUN           mkdir -p /opt/local/; \
+              cd /opt/local
+              ls -al ; \
+              pwd ; \
+              wget https://repository-master.mulesoft.org/nexus/content/repositories/releases/org/mule/distributions/mule-standalone/3.7.0/mule-standalone-3.7.0.tar.gz ;\
+              tar xzvf /opt/local/mule-standalone-3.7.0.tar.gz ; \
+              ln -s /opt/local/mule-standalone-3.7.0 ~/mule ; \
+              ls -al ; 
+
 WORKDIR                 /opt/local/
-ADD                     https://repository-master.mulesoft.org/nexus/content/repositories/releases/org/mule/distributions/mule-standalone/3.7.0/mule-standalone-3.7.0.tar.gz /opt/local/
+#ADD                     https://repository-master.mulesoft.org/nexus/content/repositories/releases/org/mule/distributions/mule-standalone/3.7.0/mule-standalone-3.7.0.tar.gz /opt/local/
 
 #RUN                     ls -al
 #RUN                     pwd
 #RUN                     tar xzvf ~/mule-standalone-3.7.0.tar.gz
 #RUN                     ln -s mule-standalone-3.7.0 mule
 
-RUN                     ls -al ; pwd ; tar xzvf /opt/local/mule-standalone-3.7.0.tar.gz ; ln -s /opt/local/mule-standalone-3.7.0 ~/mule
 
 # Remove things that we don't need in production:
 # RUN                     rm -f mule-standalone-3.7.0.tar.gz
