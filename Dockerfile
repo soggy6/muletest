@@ -4,10 +4,10 @@ FROM          registry.access.redhat.com/openshift3/php-55-rhel7
 # Mule installation
 RUN           mkdir -p ~/mulestuff ;\
               cd ~/mulestuff ;\
-              wget http://repository-master.mulesoft.org/nexus/content/repositories/releases/org/mule/distributions/mule-standalone/3.7.0/mule-standalone-3.7.0.tar.gz  ;\
+              wget http://www.unc.edu/~soggy/mule-standalone-3.7.0.tar.gz  ;\
               tar xzvf ~/mulestuff/mule-standalone-3.7.0.tar.gz ;\
               ln -s ~/mulestuff/mule-standalone-3.7.0 ~/mulestuff/mule
-
+              
 WORKDIR       ~/mulestuff
 #ADD                     https://repository-master.mulesoft.org/nexus/content/repositories/releases/org/mule/distributions/mule-standalone/3.7.0/mule-standalone-3.7.0.tar.gz /opt/local/
 
