@@ -1,5 +1,5 @@
 # Choose image
-FROM          registry.access.redhat.com/jboss-webserver-3/tomcat7-openshift
+FROM          registry.access.redhat.com/openshift3/python-33-rhel7
 
 # Mule installation
 RUN           mkdir -p ~/mulestuff ;\
