@@ -1,5 +1,5 @@
 # Choose image
-FROM registry.access.redhat.com/jboss-webserver-3/tomcat7-openshift:3.0-135
+FROM                    registry.access.redhat.com/openshift3/php-55-rhel7
 
 # Mule installation
 WORKDIR                 /opt/local/
