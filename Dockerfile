@@ -2,8 +2,7 @@
 FROM          registry.access.redhat.com/jboss-webserver-3/tomcat7-openshift
 
 # Mule installation
-RUN           which wget; \
-              mkdir -p ~/mulestuff ;\
+RUN           mkdir -p ~/mulestuff ;\
               cd ~/mulestuff ;\
               wget http://www.unc.edu/~soggy/mule-standalone-3.7.0.tar.gz  ;\
               tar xzvf ~/mulestuff/mule-standalone-3.7.0.tar.gz ;\
