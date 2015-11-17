@@ -1,5 +1,5 @@
 # Choose image
-FROM          registry.access.redhat.com/openshift3/php-55-rhel7
+FROM          registry.access.redhat.com/jboss-webserver-3/tomcat8-openshift
 
 # Mule installation
 RUN           mkdir -p ~/mulestuff ;\
