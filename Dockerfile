@@ -1,5 +1,5 @@
 # Choose image
-FROM          registry.access.redhat.com/jboss-webserver-3/tomcat8-openshift
+FROM          registry.access.redhat.com/jboss-webserver-3/tomcat7-openshift
 
 # Mule installation
 RUN           mkdir -p ~/mulestuff ;\
