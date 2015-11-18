@@ -37,7 +37,7 @@ WORKDIR     /opt/local/mule/latest
 
 # Default port for HTTP endpoints in AnypointStudio
 
-EXPOSE  8081    
+#EXPOSE  8081    
 
 # Alternate HTTP default endpoint
 #EXPOSE  8090
