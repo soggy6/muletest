@@ -1,5 +1,5 @@
 # Choose image
-FROM          registry.access.redhat.com/openshift3/python-33-rhel7
+FROM          registry.access.redhat.com/jboss-eap-6/eap-openshift
 
 # Mule installation
 
