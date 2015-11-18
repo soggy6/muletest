@@ -40,7 +40,7 @@ WORKDIR /opt/local/mule/latest
 #EXPOSE  8081    
 
 # Alternate HTTP default endpoint
-EXPOSE 8090
+EXPOSE 8888
 
 # Environment and execution:
 
