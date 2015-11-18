@@ -1,5 +1,5 @@
 # Choose image
-FROM        centos7
+FROM        centos:7
 MAINTAINER  ITS Middleware <middleware@unc.edu>
 
 # Mule installation
