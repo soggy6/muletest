@@ -3,7 +3,7 @@ FROM          registry.access.redhat.com/jboss-eap-6/eap-openshift
 
 # Mule installation
 
-RUN           yum -y install java-1.7.0-openjdk-devel
+RUN           sudo yum -y install java-1.7.0-openjdk-devel
 RUN           mkdir -p ~/mulestuff ;\
               cd ~/mulestuff ;\
               wget http://www.unc.edu/~soggy/mule-standalone-3.7.0.tar.gz  ;\
