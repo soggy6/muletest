@@ -11,7 +11,7 @@ RUN         yum -y --setopt=tsflags=nodocs update && yum -y install sed wget jav
 RUN         cd /opt/local/mule ;\
             wget http://www.unc.edu/~soggy/mule-standalone-3.7.0.tar.gz  ;\
             tar xzvf /opt/local/mule/mule-standalone-3.7.0.tar.gz ;\
-            ln -s /opt/local/mule/mule-standalone-3.7.0 /opt/local/mule/latest
+            ln -s /opt/local/mule/mule-standalone-3.7.0 /opt/local/mule/latest;
               
 WORKDIR     /opt/local/mule/latest
 #ADD        https://repository-master.mulesoft.org/nexus/content/repositories/releases/org/mule/distributions/mule-standalone/3.7.0/mule-standalone-3.7.0.tar.gz /opt/local/
@@ -30,20 +30,20 @@ WORKDIR     /opt/local/mule/latest
 # Configure external access:
 
 # Mule remote debugger
-#EXPOSE  5000
+EXPOSE  5000
 
 # Mule JMX port (must match Mule config file)
-#EXPOSE  1098
+EXPOSE  1098
 
 # Default port for HTTP endpoints in AnypointStudio
 
-#EXPOSE  8081    
+EXPOSE  8081    
 
 # Alternate HTTP default endpoint
-#EXPOSE  8090
+EXPOSE  8090
 
 # Environment and execution:
 
 ENV         MULE_BASE /opt/local/mule/latest
 WORKDIR     /opt/local/mule/latest
-CMD         /opt/local/mule/latest/bin/mule
+CMD         ./bin/mule
