@@ -4,14 +4,16 @@ MAINTAINER  ITS Middleware <middleware@unc.edu>
 
 # Mule installation
 
+RUN         mkdir -p /opt/local/; \
+            mkdir -p /opt/local/logs; \
+            mkdir -p /opt/local/mule;
 RUN         yum -y --setopt=tsflags=nodocs update && yum -y install sed wget java-1.7.0-openjdk-devel && yum clean all -y
-RUN         mkdir -p ~/mulestuff ;\
-            cd ~/mulestuff ;\
+RUN         cd /opt/local/mule ;\
             wget http://www.unc.edu/~soggy/mule-standalone-3.7.0.tar.gz  ;\
-            tar xzvf ~/mulestuff/mule-standalone-3.7.0.tar.gz ;\
-            ln -s ~/mulestuff/mule-standalone-3.7.0 ~/mulestuff/mule
+            tar xzvf /opt/local/mule/mule-standalone-3.7.0.tar.gz ;\
+            ln -s /opt/local/mule/mule-standalone-3.7.0 /opt/local/mule/latest
               
-WORKDIR     ~/mulestuff
+WORKDIR     /opt/local/mule/latest
 #ADD        https://repository-master.mulesoft.org/nexus/content/repositories/releases/org/mule/distributions/mule-standalone/3.7.0/mule-standalone-3.7.0.tar.gz /opt/local/
 
 #RUN        ls -al
@@ -41,6 +43,6 @@ WORKDIR     ~/mulestuff
 
 # Environment and execution:
 
-ENV         MULE_BASE ~/mulestuff/mule
-WORKDIR     ~/mulestuff/mule
-CMD         ~/mulestuff/mule/bin/mule
+ENV         MULE_BASE /opt/local/mule/latest
+WORKDIR     /opt/local/mule/latest
+CMD         /opt/local/mule/latest/bin/mule
