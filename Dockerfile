@@ -1,9 +1,10 @@
 # Choose image
-FROM          registry.access.redhat.com/openshift3/python-33-rhel7
+FROM           registry.access.redhat.com/jboss-webserver-3/tomcat8-openshift
 
 # Mule installation
-RUN           yum -y install java-1.7.0-openjdk-devel ;\
-              mkdir -p ~/mulestuff ;\
+
+RUN           yum -y install wget
+RUN           mkdir -p ~/mulestuff ;\
               cd ~/mulestuff ;\
               wget http://www.unc.edu/~soggy/mule-standalone-3.7.0.tar.gz  ;\
               tar xzvf ~/mulestuff/mule-standalone-3.7.0.tar.gz ;\
