@@ -11,8 +11,7 @@ RUN yum -y --setopt=tsflags=nodocs update && yum -y install sed wget java-1.7.0-
 RUN cd /opt/local/mule ;\
     wget http://www.unc.edu/~soggy/mule-standalone-3.7.0.tar.gz  ;\
     tar xzvf /opt/local/mule/mule-standalone-3.7.0.tar.gz ;\
-    ln -s /opt/local/mule/mule-standalone-3.7.0 /opt/local/mule/latest;\
-    which java;
+    ln -s /opt/local/mule/mule-standalone-3.7.0 /opt/local/mule/latest;
               
 WORKDIR /opt/local/mule/latest
 #ADD        https://repository-master.mulesoft.org/nexus/content/repositories/releases/org/mule/distributions/mule-standalone/3.7.0/mule-standalone-3.7.0.tar.gz /opt/local/
@@ -44,7 +43,7 @@ EXPOSE 8090
 
 # Environment and execution:
 
-ENV JAVA_HOME /usr/java/default
+ENV JAVA_HOME /usr/lib/jvm/jre-1.7.0-openjdk-devel
 ENV MULE_BASE /opt/local/mule/latest
 WORKDIR /opt/local/mule/latest
 CMD ./bin/mule
