@@ -43,7 +43,7 @@ EXPOSE 8090
 
 # Environment and execution:
 
-ENV JAVA_HOME /usr/lib/jvm/jre-1.7.0-openjdk
+ENV JAVA_HOME /usr/lib/jvm/java-1.7.0-openjdk-1.7.0.0.x86_64/
 ENV MULE_BASE /opt/local/mule/latest
 WORKDIR /opt/local/mule/latest
 CMD ./bin/mule
