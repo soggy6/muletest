@@ -43,6 +43,7 @@ EXPOSE 8090
 
 # Environment and execution:
 
+JAVA_HOME /usr/java/default/
 ENV MULE_BASE /opt/local/mule/latest
 WORKDIR /opt/local/mule/latest
 CMD ./bin/mule
