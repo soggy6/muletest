@@ -7,7 +7,7 @@ MAINTAINER ITS Middleware <middleware@unc.edu>
 RUN mkdir -p /opt/local/; \
     mkdir -p /opt/local/logs; \
     mkdir -p /opt/local/mule;
-RUN yum -y --setopt=tsflags=nodocs update && yum -y install sed wget java-1.7.0-openjdk-devel && yum clean all -y
+RUN yum -y --setopt=tsflags=nodocs update && yum -y install sed wget java-1.7.0-openjdk && yum clean all -y
 RUN cd /opt/local/mule ;\
     wget http://www.unc.edu/~soggy/mule-standalone-3.7.0.tar.gz  ;\
     tar xzvf /opt/local/mule/mule-standalone-3.7.0.tar.gz ;\
@@ -43,7 +43,7 @@ EXPOSE 8090
 
 # Environment and execution:
 
-ENV JAVA_HOME /usr/lib/jvm/jre-1.7.0-openjdk-devel
+ENV JAVA_HOME /usr/lib/jvm/jre-1.7.0-openjdk
 ENV MULE_BASE /opt/local/mule/latest
 WORKDIR /opt/local/mule/latest
 CMD ./bin/mule
